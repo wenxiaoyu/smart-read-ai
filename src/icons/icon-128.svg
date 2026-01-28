@@ -1,4 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <rect width="128" height="128" fill="#4285f4" rx="25.6"/>
-  <text x="50%" y="50%" font-family="Arial" font-size="64" fill="white" text-anchor="middle" dominant-baseline="central">D</text>
+  <!-- 渐变背景 -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 圆角矩形背景 -->
+  <rect width="128" height="128" fill="url(#grad1)" rx="28"/>
+  
+  <!-- 书本图标 -->
+  <g transform="translate(32, 32)">
+    <!-- 书本主体 -->
+    <path d="M 8 8 L 8 56 L 32 52 L 56 56 L 56 8 L 32 12 Z" 
+          fill="white" opacity="0.95"/>
+    
+    <!-- 书本页面线条 -->
+    <line x1="32" y1="12" x2="32" y2="52" stroke="url(#grad1)" stroke-width="2" opacity="0.6"/>
+    
+    <!-- AI 闪电图标 -->
+    <path d="M 38 20 L 34 30 L 38 30 L 36 40 L 42 28 L 38 28 Z" 
+          fill="url(#grad2)" opacity="0.9"/>
+    
+    <!-- 装饰性圆点 -->
+    <circle cx="16" cy="20" r="2" fill="white" opacity="0.6"/>
+    <circle cx="16" cy="28" r="2" fill="white" opacity="0.6"/>
+    <circle cx="16" cy="36" r="2" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- 光晕效果 -->
+  <circle cx="64" cy="64" r="50" fill="none" stroke="white" stroke-width="2" opacity="0.1"/>
 </svg>

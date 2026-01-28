@@ -1,0 +1,154 @@
+/* Switch 组件样式 - 毛玻璃效果 */
+
+.smartread-switch-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+.smartread-switch-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.smartread-switch-label.smartread-switch-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.smartread-switch-label-left {
+  flex-direction: row-reverse;
+}
+
+.smartread-switch-label-right {
+  flex-direction: row;
+}
+
+/* 文本区域 */
+.smartread-switch-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.smartread-switch-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.smartread-switch-description {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* 开关容器 */
+.smartread-switch-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.smartread-switch-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 滑块 */
+.smartread-switch-slider {
+  display: block;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.smartread-switch-slider::before {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 尺寸 - 小 */
+.smartread-switch-small .smartread-switch-slider {
+  width: 40px;
+  height: 24px;
+}
+
+.smartread-switch-small .smartread-switch-slider::before {
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+}
+
+.smartread-switch-small .smartread-switch-input:checked + .smartread-switch-slider::before {
+  transform: translateX(16px);
+}
+
+/* 尺寸 - 中 */
+.smartread-switch-medium .smartread-switch-slider {
+  width: 48px;
+  height: 28px;
+}
+
+.smartread-switch-medium .smartread-switch-slider::before {
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+}
+
+.smartread-switch-medium .smartread-switch-input:checked + .smartread-switch-slider::before {
+  transform: translateX(20px);
+}
+
+/* 尺寸 - 大 */
+.smartread-switch-large .smartread-switch-slider {
+  width: 56px;
+  height: 32px;
+}
+
+.smartread-switch-large .smartread-switch-slider::before {
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+}
+
+.smartread-switch-large .smartread-switch-input:checked + .smartread-switch-slider::before {
+  transform: translateX(24px);
+}
+
+/* 选中状态 */
+.smartread-switch-input:checked + .smartread-switch-slider {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 禁用状态 */
+.smartread-switch-input:disabled + .smartread-switch-slider {
+  cursor: not-allowed;
+}
+
+/* 暗黑模式 */
+@media (prefers-color-scheme: dark) {
+  .smartread-switch-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .smartread-switch-description {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .smartread-switch-slider {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .smartread-switch-slider::before {
+    background: rgba(255, 255, 255, 0.95);
+  }
+}

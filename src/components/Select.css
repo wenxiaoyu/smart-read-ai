@@ -1,0 +1,168 @@
+/* Select 组件样式 - 毛玻璃效果 */
+
+.smartread-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+.smartread-select-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.smartread-select-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.smartread-select-container:focus-within {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.smartread-select-container.smartread-select-error {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.smartread-select-container.smartread-select-error:focus-within {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.smartread-select-container.smartread-select-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 尺寸 */
+.smartread-select-small {
+  padding: 8px 12px;
+}
+
+.smartread-select-small .smartread-select-field {
+  font-size: 13px;
+}
+
+.smartread-select-medium {
+  padding: 12px 16px;
+}
+
+.smartread-select-medium .smartread-select-field {
+  font-size: 14px;
+}
+
+.smartread-select-large {
+  padding: 14px 18px;
+}
+
+.smartread-select-large .smartread-select-field {
+  font-size: 15px;
+}
+
+/* 变体 */
+.smartread-select-filled {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.smartread-select-filled:focus-within {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* 下拉框 */
+.smartread-select-field {
+  all: unset;
+  flex: 1;
+  min-width: 0;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 24px;
+}
+
+.smartread-select-field:disabled {
+  cursor: not-allowed;
+}
+
+.smartread-select-field option {
+  background: white;
+  color: rgba(0, 0, 0, 0.85);
+  padding: 8px 12px;
+}
+
+/* 箭头图标 */
+.smartread-select-arrow {
+  position: absolute;
+  right: 16px;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.smartread-select-container:focus-within .smartread-select-arrow {
+  transform: rotate(180deg);
+}
+
+/* 错误和提示文本 */
+.smartread-select-error-text {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(239, 68, 68, 0.9);
+}
+
+.smartread-select-hint {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* 暗黑模式 */
+@media (prefers-color-scheme: dark) {
+  .smartread-select-label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .smartread-select-container {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .smartread-select-container:focus-within {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .smartread-select-filled {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .smartread-select-filled:focus-within {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .smartread-select-field {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .smartread-select-field option {
+    background: rgba(30, 30, 30, 0.95);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .smartread-select-arrow {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .smartread-select-hint {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

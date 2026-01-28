@@ -11,6 +11,7 @@ Instructions for AI coding assistants using OpenSpec for spec-driven development
 - Write deltas: use `## ADDED|MODIFIED|REMOVED|RENAMED Requirements`; include at least one `#### Scenario:` per requirement
 - Validate: `openspec validate [change-id] --strict` and fix issues
 - Request approval: Do not start implementation until proposal is approved
+- Archive after deployment: Use `openspec archive <change-id> --yes` when user requests "归档 [change-id]"
 
 ## Three-Stage Workflow
 
@@ -64,6 +65,46 @@ Track these steps as TODOs and complete them one by one.
 6. **Update checklist** - After all work is done, set every task to `- [x]` so the list reflects reality
 7. **Approval gate** - Do not start implementation until the proposal is reviewed and approved
 
+**Task Status Management:**
+
+AI assistants MUST update task status markers in `tasks.md` at the following points:
+
+- **Before starting a task**: Change `- [ ]` to `- [-]` (in progress)
+- **After completing a task**: Change `- [-]` to `- [x]` (completed)
+
+Task status markers:
+- `- [ ]` = Not started (space)
+- `- [-]` = In progress (dash)
+- `- [x]` = Completed (x)
+
+This provides real-time visibility into implementation progress and prevents confusion about which tasks are actively being worked on.
+
+**Project Documentation Update:**
+
+After completing each task, AI assistants MUST evaluate whether project documentation needs updating:
+
+- **When to update**: If the task introduces/modifies:
+  - New features or capabilities
+  - Architecture changes
+  - New dependencies or tech stack changes
+  - API changes or breaking changes
+  - New constraints or requirements
+  - Business model or target user changes
+
+- **Files to consider**:
+  - `openspec/project.md` - Project context, tech stack, architecture, constraints
+  - `README.md` - User-facing documentation, features, setup instructions
+  - `package.json` - Description, keywords, dependencies
+  - Other relevant docs (CONTRIBUTING.md, API docs, etc.)
+
+- **Update process**:
+  1. Review the completed task and assess impact on project documentation
+  2. If updates needed, modify relevant files to reflect current state
+  3. Ensure consistency across all documentation files
+  4. Keep updates concise and focused on what changed
+
+- **Skip updates for**: Bug fixes, typos, internal refactoring, test additions (unless they change testing strategy)
+
 ### Stage 3: Archiving Changes
 
 After deployment, create separate PR to:
@@ -72,6 +113,19 @@ After deployment, create separate PR to:
 - Update `specs/` if capabilities changed
 - Use `openspec archive <change-id> --skip-specs --yes` for tooling-only changes (always pass the change ID explicitly)
 - Run `openspec validate --strict` to confirm the archived change passes checks
+
+**Archiving Triggers:**
+
+When user requests archiving with phrases like:
+- "归档 [change-id]"
+- "archive [change-id]"
+- "归档变更 [change-id]"
+
+AI assistants MUST:
+1. Use the `openspec archive <change-id>` command (not manual file operations)
+2. Add `--yes` flag for non-interactive execution: `openspec archive <change-id> --yes`
+3. Verify the change-id exists before archiving
+4. Run `openspec validate --strict` after archiving to confirm success
 
 ## Before Any Task
 
@@ -231,6 +285,13 @@ If multiple capabilities are affected, create multiple delta files under `change
 - [ ] 1.3 Add frontend component
 - [ ] 1.4 Write tests
 ```
+
+**Task Status Markers:**
+- `- [ ]` = Not started
+- `- [-]` = In progress
+- `- [x]` = Completed
+
+Update status when starting and completing each task.
 
 5. **Create design.md when needed:**
    Create `design.md` if any of the following apply; otherwise omit it:
@@ -449,6 +510,29 @@ Only add complexity with:
 - Use `file.ts:42` format for code locations
 - Reference specs as `specs/auth/spec.md`
 - Link related changes and PRs
+
+### Documentation Maintenance
+
+- **Keep docs in sync**: After implementing features, update project documentation immediately
+- **Single source of truth**: `openspec/project.md` is the authoritative source for project context
+- **Consistency check**: Ensure `README.md`, `package.json`, and `project.md` tell the same story
+- **User perspective**: `README.md` should be user-facing, `project.md` should be developer/AI-facing
+- **Version alignment**: Update version numbers and changelogs when releasing
+
+### Technology-Specific Best Practices
+
+When working with specific technologies, always check for and follow technology-specific best practices:
+
+- **Chrome Extensions**: See `.kiro/steering/chrome-extension-best-practices.md` for Shadow DOM, CSP, and build requirements
+- **React**: Follow React best practices for hooks, state management, and component lifecycle
+- **TypeScript**: Maintain strict type safety, avoid `any`, use proper interfaces
+- **Other technologies**: Check `.kiro/steering/` directory for relevant guidelines
+
+**After solving a non-obvious problem**:
+1. Create troubleshooting documentation
+2. Update relevant best practices files
+3. Add to project constraints if applicable
+4. Ensure future implementations avoid the same issue
 
 ### Capability Naming
 

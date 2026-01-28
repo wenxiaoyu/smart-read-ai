@@ -1,0 +1,103 @@
+/* Spinner 组件样式 - 毛玻璃效果 */
+
+.smartread-spinner-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+.smartread-spinner {
+  display: inline-block;
+  position: relative;
+}
+
+.smartread-spinner-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+/* 尺寸 */
+.smartread-spinner-small {
+  width: 16px;
+  height: 16px;
+}
+
+.smartread-spinner-small .smartread-spinner-circle {
+  border-width: 2px;
+}
+
+.smartread-spinner-medium {
+  width: 24px;
+  height: 24px;
+}
+
+.smartread-spinner-medium .smartread-spinner-circle {
+  border-width: 3px;
+}
+
+.smartread-spinner-large {
+  width: 40px;
+  height: 40px;
+}
+
+.smartread-spinner-large .smartread-spinner-circle {
+  border-width: 4px;
+}
+
+/* 变体颜色 */
+.smartread-spinner-default .smartread-spinner-circle {
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-left-color: rgba(0, 0, 0, 0.7);
+}
+
+.smartread-spinner-primary .smartread-spinner-circle {
+  border-top-color: rgba(102, 126, 234, 0.2);
+  border-right-color: rgba(102, 126, 234, 0.2);
+  border-bottom-color: rgba(102, 126, 234, 0.2);
+  border-left-color: rgba(102, 126, 234, 1);
+}
+
+.smartread-spinner-white .smartread-spinner-circle {
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-left-color: rgba(255, 255, 255, 1);
+}
+
+/* 标签 */
+.smartread-spinner-label {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 暗黑模式 */
+@media (prefers-color-scheme: dark) {
+  .smartread-spinner-default .smartread-spinner-circle {
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-right-color: rgba(255, 255, 255, 0.2);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .smartread-spinner-label {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
