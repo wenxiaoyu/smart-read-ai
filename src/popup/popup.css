@@ -49,268 +49,191 @@
   padding: 8px !important;
 }
 
-/* 搜索区域 */
-.search-section {
+/* 使用说明区域 */
+.usage-guide-section {
   padding: 20px;
-}
-
-/* 使用共享组件的搜索输入框 */
-.search-input-component {
-  margin-bottom: 12px;
-}
-
-.clear-btn {
-  all: unset;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.clear-btn:hover {
-  background: rgba(0, 0, 0, 0.15);
-}
-
-/* 搜索结果 */
-.search-results {
-  margin-top: 12px;
-  max-height: 300px;
   overflow-y: auto;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  max-height: calc(500px - 120px);
 }
 
-.search-results::-webkit-scrollbar {
+.usage-guide-section::-webkit-scrollbar {
   width: 6px;
 }
 
-.search-results::-webkit-scrollbar-track {
+.usage-guide-section::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.search-results::-webkit-scrollbar-thumb {
+.usage-guide-section::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
 
-.search-result-item {
+.guide-header {
   display: flex;
+  align-items: center;
   gap: 12px;
-  padding: 12px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  transition: background 0.2s;
+  margin-bottom: 24px;
 }
 
-.search-result-item:last-child {
-  border-bottom: none;
-}
-
-.search-result-item:hover {
-  background: rgba(102, 126, 234, 0.08);
-}
-
-.result-type {
-  font-size: 24px;
+.guide-icon {
+  font-size: 32px;
   line-height: 1;
 }
 
-.result-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.result-title {
-  font-size: 14px;
-  font-weight: 600;
+.guide-title {
+  font-size: 20px;
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.85);
-  margin-bottom: 4px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.result-excerpt {
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-.result-tags {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-.result-tag {
-  font-size: 11px;
-  padding: 2px 8px;
-  background: rgba(102, 126, 234, 0.15);
-  color: rgba(102, 126, 234, 0.9);
-  border-radius: 4px;
-  font-weight: 500;
-}
-
-.no-results {
-  text-align: center;
-  padding: 40px 20px;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.no-results-icon {
-  font-size: 48px;
-  display: block;
-  margin-bottom: 12px;
-  opacity: 0.3;
-}
-
-.no-results p {
   margin: 0;
-  font-size: 14px;
 }
 
-/* Token 统计区域 */
-.token-section {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.3);
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.guide-step {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.section-header {
+.step-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.section-icon {
+.step-text h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 6px 0;
+}
+
+.step-text p {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide-features {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: rgba(102, 126, 234, 0.08);
+  border-radius: 12px;
+}
+
+.features-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 12px 0;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.features-list li {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.5;
+}
+
+.features-list strong {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.guide-providers {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.providers-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 12px 0;
+}
+
+.providers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.provider-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+}
+
+.provider-icon {
   font-size: 18px;
   line-height: 1;
 }
 
-.section-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.demo-badge {
-  margin-left: auto;
-  font-size: 11px;
-  padding: 2px 8px;
-  background: rgba(255, 152, 0, 0.15);
-  color: rgba(255, 152, 0, 0.9);
-  border-radius: 4px;
-  font-weight: 500;
-}
-
-.coming-soon-notice {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px;
-  background: rgba(102, 126, 234, 0.08);
-  border-radius: 8px;
-  margin-top: 12px;
-}
-
-.notice-icon {
-  font-size: 16px;
-  line-height: 1;
-}
-
-.notice-text {
+.provider-name {
   font-size: 13px;
-  color: rgba(102, 126, 234, 0.9);
   font-weight: 500;
-}
-
-.token-stats {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.token-numbers {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
-.token-used {
-  font-size: 28px;
-  font-weight: 700;
-  color: rgba(102, 126, 234, 0.9);
-}
-
-.token-separator {
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.token-limit {
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.token-percentage {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-/* 进度条 - 使用共享组件 */
-.token-progress-component {
-  margin-bottom: 12px;
-}
-
-.token-details {
-  display: flex;
-  gap: 16px;
-}
-
-.token-detail-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.detail-label {
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.detail-value {
-  font-size: 16px;
-  font-weight: 600;
   color: rgba(0, 0, 0, 0.75);
 }
 
-/* 快速设置 */
-.quick-settings {
-  padding: 20px;
+.guide-notice {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 193, 7, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 193, 7, 0.2);
 }
 
-.theme-selector {
-  display: flex;
-  gap: 8px;
+.notice-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.notice-content {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.5;
+}
+
+.notice-content strong {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
 }
 
 /* 底部 */
@@ -363,84 +286,71 @@
     background: rgba(255, 255, 255, 0.12) !important;
   }
 
-  .clear-btn {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .clear-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  .search-results {
+  .guide-step {
     background: rgba(40, 40, 40, 0.5);
     border-color: rgba(255, 255, 255, 0.08);
   }
 
-  .search-results::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  .search-result-item {
-    border-bottom-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .search-result-item:hover {
-    background: rgba(102, 126, 234, 0.15);
-  }
-
-  .result-title {
+  .step-text h3 {
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .result-excerpt {
+  .step-text p {
     color: rgba(255, 255, 255, 0.6);
   }
 
-  .no-results {
-    color: rgba(255, 255, 255, 0.4);
-  }
-
-  .token-section {
-    background: rgba(40, 40, 40, 0.3);
-    border-top-color: rgba(255, 255, 255, 0.06);
-    border-bottom-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .section-title {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .demo-badge {
-    background: rgba(255, 152, 0, 0.25);
-    color: rgba(255, 152, 0, 1);
-  }
-
-  .coming-soon-notice {
+  .guide-features {
     background: rgba(102, 126, 234, 0.15);
   }
 
-  .notice-text {
-    color: rgba(102, 126, 234, 1);
+  .features-title {
+    color: rgba(255, 255, 255, 0.9);
   }
 
-  .token-separator {
-    color: rgba(255, 255, 255, 0.3);
+  .features-list li {
+    color: rgba(255, 255, 255, 0.7);
   }
 
-  .token-limit {
-    color: rgba(255, 255, 255, 0.5);
+  .features-list strong {
+    color: rgba(255, 255, 255, 0.9);
   }
 
-  .token-percentage {
-    color: rgba(255, 255, 255, 0.6);
+  .guide-providers {
+    background: rgba(40, 40, 40, 0.5);
+    border-color: rgba(255, 255, 255, 0.08);
   }
 
-  .detail-label {
-    color: rgba(255, 255, 255, 0.5);
+  .providers-title {
+    color: rgba(255, 255, 255, 0.9);
   }
 
-  .detail-value {
+  .provider-item {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .provider-name {
     color: rgba(255, 255, 255, 0.75);
+  }
+
+  .guide-notice {
+    background: rgba(255, 193, 7, 0.15);
+    border-color: rgba(255, 193, 7, 0.3);
+  }
+
+  .notice-content {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .notice-content strong {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .guide-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .usage-guide-section::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .popup-footer {
