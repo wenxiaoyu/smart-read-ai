@@ -115,7 +115,7 @@
 
 如有关于隐私政策的问题，请联系：
 
-- **GitHub**：https://github.com/[your-username]/[your-repo]
+- **GitHub**：https://github.com/wenxiaoyu/smart-read-ai/blob/main/privacy-policy.md
 - **Email**：[157085863@qq.com]
 
 ## 合规声明
