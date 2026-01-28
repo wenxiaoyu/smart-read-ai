@@ -96,9 +96,9 @@ unzip -l smart-read-ai-v0.1.1.zip
 
 ### 📝 扩展名称
 
-**中文**：智阅 AI - 文本简化与解释助手
+**中文**：智阅AI - 文本简化与解释助手
 
-**英文**：SmartRead AI - Text Simplifier & Explainer
+**英文**：Smart Read AI - Text Simplifier & Explainer
 
 **字符限制**：45 字符以内
 
@@ -127,9 +127,9 @@ Simplify complex text and explain technical terms with AI assistance
 **中文版本**：
 
 ```markdown
-# 智阅 AI - 让阅读更轻松
+# 智阅AI - 让阅读更轻松
 
-智阅 AI 是一个强大的浏览器扩展，帮助您轻松理解网页上的复杂文本和专业术语。
+智阅AI 是一个强大的浏览器扩展，帮助您轻松理解网页上的复杂文本和专业术语。
 
 ## ✨ 核心功能
 
