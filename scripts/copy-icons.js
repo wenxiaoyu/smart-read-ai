@@ -12,8 +12,8 @@ const distIconsDir = join(rootDir, 'dist', 'icons');
 // Create icons directory in dist
 mkdirSync(distIconsDir, { recursive: true });
 
-// Copy icon files
-const icons = ['icon-16.svg', 'icon-48.svg', 'icon-128.svg'];
+// Copy icon files (PNG format for Chrome Web Store compatibility)
+const icons = ['icon-16.png', 'icon-48.png', 'icon-128.png'];
 
 icons.forEach((icon) => {
   const src = join(srcIconsDir, icon);
