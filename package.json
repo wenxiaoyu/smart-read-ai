@@ -1,6 +1,6 @@
 {
   "name": "smart-read-ai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "智阅AI - 聚焦技术/学术专业阅读场景的 Chrome 浏览器插件，上下文感知的智能阅读助手",
   "type": "module",
   "scripts": {
